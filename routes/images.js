@@ -6,8 +6,9 @@ async function svgText(text, width, height) {
     const svgImage = `
     <svg width="${width}" height="${height}">
     <style>
-    .title { fill: #000; font-size: 30px; font-weight: bold; font-family: arial; width: ${width}; white-space: pre;}
+    .title { fill: #000; font-size: ${parseFloat(width.replace("px","")) * .1}px; font-weight: bold; font-family: arial; width: ${width}; white-space: pre;}
     </style>
+    <rect x="0" y="0" width="${width}" height="${height}" fill="#DDDDDD" />
     <text x="50%" y="50%" text-anchor="middle" class="title">${text}</text>
   </svg>
     `
@@ -15,6 +16,23 @@ async function svgText(text, width, height) {
     const image = await sharp(imageBuffer).png({ progressive: true }).toBuffer();
     return image;
 }
+
+router.get('/placeholder/:width/:height?', async (req,res) => {
+    const width = req.params.width;
+    const height = req.params.height || width;
+
+    try {
+        const image = await svgText(`${width} X ${height}`, `${width}px`, `${height}px`);
+
+        res.type('png').send(image);
+    } catch (error) {
+        const image = await svgText("Server Error", "200px", "200px");
+
+        console.log(error);
+    
+        res.type('png').send(image);
+    }
+});
 
 router.get('/:image(*)', async (req, res) => {
     const imagePath = req.params.image;
@@ -41,6 +59,6 @@ router.get('/:image(*)', async (req, res) => {
     
         res.type('png').send(image);
     }
-})
+});
 
 module.exports = router;

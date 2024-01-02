@@ -22,4 +22,17 @@ If you don't want to use the functions of the cdn-server just put `/static` befo
 ```html
 <img src='<cdn-domain>/img/nature/field.jpg?crop={"left": 100, "top": 0, "width": 300, "height": 500}'>
 ```
+
+### Placeholder
+`<cdn-domain>/img/placeholder/<width>/<height>`<br />
+**Square Placeholder Image**
+```html
+<img src='<cdn-domain>/img/placeholder/600'>
+```
+When you want to have a square placeholder image you can just use one value hich will also be used as the height.
+
+**Rectangle Placeholder Image**
+```html
+<img src='<cdn-domain>/img/placeholder/600/200'>
+```
  
