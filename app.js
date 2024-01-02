@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const config = require('./config');
-const port = 3000;
 
 app.use('/static', express.static('public'));
 
@@ -25,4 +24,4 @@ if(config.use_test_HTML){
     });
 }
 
-app.listen(port, () => console.log('Server Running on Port ' + port));
+app.listen(config.port, () => console.log('Server Running on Port ' + config.port));

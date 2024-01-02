@@ -17,7 +17,8 @@ const config = {
             safari10: false
         }
     },
-    use_test_HTML: true
+    use_test_HTML: true,
+    port: 3000
 }
 
 module.exports = config;
