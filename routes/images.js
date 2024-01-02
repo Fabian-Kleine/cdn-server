@@ -17,12 +17,13 @@ async function svgText(text, width, height) {
     return image;
 }
 
-router.get('/placeholder/:width/:height?', async (req,res) => {
+router.get('/placeholder/:width/:height?/:text?', async (req,res) => {
     const width = req.params.width;
     const height = req.params.height || width;
+    const text = req.params.text || `${width} X ${height}`;
 
     try {
-        const image = await svgText(`${width} X ${height}`, `${width}px`, `${height}px`);
+        const image = await svgText(text, `${width}px`, `${height}px`);
 
         res.type('png').send(image);
     } catch (error) {

@@ -54,4 +54,8 @@ When you want to have a square placeholder image you can just use one value hich
 ```html
 <img src='<cdn-domain>/img/placeholder/600/200'>
 ```
+**Placeholder Image with custom text**
+```html
+<img src='<cdn-domain>/img/placeholder/600/200/custom text'>
+```
  
