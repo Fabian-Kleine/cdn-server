@@ -46,6 +46,12 @@ Mirror the image vertically (up-down) about the x-axis. <br />
 ```
 Mirror the image horizontally (left-right) about the y-axis.  <br />
 
+### Combination
+```html
+<img src="<cdn-domain>/img/nature/field.jpg?size=300&blur=6&grayscale=true">
+```
+Like shown in the example above all propertys of an image can be combined.
+
 ### Placeholder
 `<cdn-domain>/img/placeholder/<width>/<height>`<br />
 **Square Placeholder Image**
