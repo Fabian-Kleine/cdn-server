@@ -49,6 +49,14 @@ router.get('/:image(*)', async (req, res) => {
             transform = transform.extract(cropValues);
         }
 
+        if(req.query.blur) transform = transform.blur(parseFloat(req.query.blur));
+
+        if(req.query.grayscale) transform = transform.grayscale();
+
+        if(req.query.flip) transform = transform.flip();
+
+        if(req.query.flop) transform = transform.flop();
+
         const image = await transform.toBuffer();
 
         res.type(metadata.format).send(image);

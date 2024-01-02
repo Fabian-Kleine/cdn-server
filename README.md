@@ -22,6 +22,25 @@ If you don't want to use the functions of the cdn-server just put `/static` befo
 ```html
 <img src='<cdn-domain>/img/nature/field.jpg?crop={"left": 100, "top": 0, "width": 300, "height": 500}'>
 ```
+### Filters
+**Blur**
+```html
+<img src="<cdn-domain>/img/nature/field.jpg?blur=6">
+```
+**Grayscale**
+```html
+<img src="<cdn-domain>/img/nature/field.jpg?grayscale=true">
+```
+**Flip**
+```html
+<img src="<cdn-domain>/img/nature/field.jpg?flip=true">
+```
+Mirror the image vertically (up-down) about the x-axis. <br />
+**Flop**
+```html
+<img src="<cdn-domain>/img/nature/field.jpg?flop=true">
+```
+Mirror the image horizontally (left-right) about the y-axis.  <br />
 
 ### Placeholder
 `<cdn-domain>/img/placeholder/<width>/<height>`<br />
