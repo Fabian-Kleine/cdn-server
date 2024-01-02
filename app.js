@@ -6,4 +6,10 @@ app.use('/static', express.static('public'));
 
 app.use(express.json());
 
+//import Routes
+const imageRoute = require('./routes/images');
+
+//Route Middleware
+app.use('/img', imageRoute);
+
 app.listen(port, () => console.log('Server Running on Port ' + port));
