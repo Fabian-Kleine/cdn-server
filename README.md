@@ -1,18 +1,20 @@
 # cdn-server
-This is a basic cdn server built using node.js and express.js. For Images it features resizing and cropping. CSS Files are minified before they are sent to the client.
+This is a basic cdn server built using node.js and express.js. For Images it features resizing and cropping. CSS Files are minified before they are sent to the client. JS Files are minified and compressed before they are sent to the client.
 
 ## Usage
 Files must just be placed inside their specific folder inside the public folder
 
 **Folders**<br />
 Images -> img<br />
-CSS Files -> css
+CSS Files -> css<br />
+JS Files -> js
 
 ## Static Files
 If you don't want to use the functions of the cdn-server just put `/static` before the filepath like this:
 ```html
 <img src="<cdn-domain>/static/img/nature/field.jpg">
 <link rel="stylesheet" href="<cdn-domain>/static/css/example.css">
+<script src="<cdn-domain>/static/js/example.js"></script>
 ```
 
 ## Images
@@ -68,3 +70,9 @@ When you want to have a square placeholder image you can just use one value hich
 ```
 The css file is minified using `postcss`, `cssnano` and `autoprefixer`.
  
+## JS Files
+```html
+<script src="<cdn-domain>/js/example.js"></script>
+<script src="<cdn-domain>/js/subdirectory/example.js"></script>
+```
+The js file is minified and compressed using terser minifier. The options for the minification can be changed inside `config.js`.
