@@ -16,7 +16,8 @@ const config = {
             toplevel: false,
             safari10: false
         }
-    }
+    },
+    use_test_HTML: true
 }
 
 module.exports = config;
