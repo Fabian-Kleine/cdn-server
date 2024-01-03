@@ -7,7 +7,9 @@ Files must just be placed inside their specific folder inside the public folder
 **Folders**<br />
 Images -> img<br />
 CSS Files -> css<br />
-JS Files -> js
+JS Files -> js<br />
+
+If you are using the cache feature you have to delete the cache folder after every change in the public folder (adding/deleting files) either by setting `clear_cache` to `true` in the config and restarting the server or by executing [this script](#cache) or by deleting it manually.
 
 ## Static Files
 If you don't want to use the functions of the cdn-server just put `/static` before the filepath like this:
