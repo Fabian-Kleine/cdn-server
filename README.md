@@ -98,7 +98,7 @@ Mirror the image horizontally (left-right) about the y-axis.  <br />
 Like shown in the example above all propertys of an image can be combined.
 
 ### Placeholder
-`<cdn-domain>/img/placeholder/<width>/<height>`<br />
+`<cdn-domain>/img/placeholder/<width>/<height>/<custom-text>`<br /><br />
 **Square Placeholder Image**
 ```html
 <img src='<cdn-domain>/img/placeholder/600'>
