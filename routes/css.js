@@ -22,12 +22,11 @@ router.get('/:cssfile(*)', async (req, res) => {
             if (cachedFile) {
                 res.type('text/css').send(cachedFile);
                 return;
-            } else {
-                const output = await minifyFile(absolutePath);
-                cache.save(cssPath, output, "css");
-                res.type('text/css').send(output);
-                return;
             }
+            const output = await minifyFile(absolutePath);
+            cache.save(cssPath, output, "css");
+            res.type('text/css').send(output);
+            return;
         }
         const output = await minifyFile(absolutePath);
         res.type('text/css').send(output);
