@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const config = require('./config');
+const cache = require('./utils/cache');
 
 app.use('/static', express.static('public'));
 
@@ -17,11 +18,15 @@ app.use('/img', imageRoute);
 app.use('/css', cssRoute);
 app.use('/js', jsRoute);
 
-if(config.use_test_HTML){
-    app.use('/', (req,res) => {
+if (config.use_test_HTML) {
+    app.use('/', (req, res) => {
         const absolutePath = path.join(__dirname, './test/index.html')
         res.sendFile(absolutePath);
     });
+}
+
+if (config.cache && config.clear_cache) {
+    cache.clear();
 }
 
 app.listen(config.port, () => console.log('Server Running on Port ' + config.port));

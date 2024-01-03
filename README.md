@@ -17,6 +17,49 @@ If you don't want to use the functions of the cdn-server just put `/static` befo
 <script src="<cdn-domain>/static/js/example.js"></script>
 ```
 
+## Config
+```javascript
+const config = {
+    //javascript minifier settings
+    //find out more at https://terser.org/docs/options/
+    minifier: {
+        compress: {
+            dead_code: false,
+            drop_console: false,
+            drop_debugger: true,
+            keep_classnames: false,
+            keep_fargs: true,
+            keep_fnames: false,
+            keep_infinity: false,
+        },
+        mangle: {
+            eval: false,
+            keep_classnames: false,
+            keep_fnames: false,
+            toplevel: false,
+            safari10: false
+        }
+    },
+    //server settings
+    use_test_HTML: true, //when true index.html inside test folder is rendered when requesting '/'
+    port: 3000, //port of the server
+    cache: true, //when true minified css and js files are cached (recommended)
+    clear_cache: true //when true the cache will be cleared on server restart (recommended)
+}
+
+module.exports = config;
+```
+Edit `config.js` to change the config for the server
+
+## Cache
+Minified CSS and JavaScript Files are cached inside the cache folder on the first request of the file. If `clear_cache` is set to `true` inside `config.js` the cache will be cleared on every server restard. So if you add or remove files from the public folder restart the server to clear the cache. This can also manually be done by running the following script.
+```javascript
+const cache = require('./utils/cache');
+
+cache.clear();
+```
+The cache can be disabled in `config.js`.
+
 ## Images
 ### Resizing
 ```html

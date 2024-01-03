@@ -18,7 +18,9 @@ const config = {
         }
     },
     use_test_HTML: true,
-    port: 3000
+    port: 3000,
+    cache: true,
+    clear_cache: true
 }
 
 module.exports = config;
