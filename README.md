@@ -9,7 +9,7 @@ Images -> img<br />
 CSS Files -> css<br />
 JS Files -> js<br />
 
-If you are using the cache feature you have to delete the cache folder after every change in the public folder (adding/deleting files) either by setting `clear_cache` to `true` in the config and restarting the server or by executing [this script](#cache) or by deleting it manually.
+If you are using the cache feature you have to delete the cache folder after every change in the public folder (adding/changing/deleting files) either by setting `clear_cache` to `true` in the config and restarting the server or by executing [this script](#cache) or by deleting it manually.
 
 ## Static Files
 If you don't want to use the functions of the cdn-server just put `/static` before the filepath like this:
@@ -54,7 +54,7 @@ module.exports = config;
 Edit `config.js` to change the config for the server
 
 ## Cache
-Minified CSS and JavaScript Files are cached inside the cache folder on the first request of the file. If `clear_cache` is set to `true` inside `config.js` the cache will be cleared on every server restard. So if you add or remove files from the public folder restart the server to clear the cache. This can also manually be done by running the following script.
+Minified CSS and JavaScript Files are cached inside the cache folder on the first request of the file. If `clear_cache` is set to `true` inside `config.js` the cache will be cleared on every server restard. So if you add, change or remove files from the public folder restart the server to clear the cache. This can also manually be done by running the following script.
 ```javascript
 const cache = require('./utils/cache');
 
