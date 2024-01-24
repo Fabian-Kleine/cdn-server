@@ -126,4 +126,6 @@ The css file is minified using `postcss`, `cssnano` and `autoprefixer`.
 <script src="<cdn-domain>/js/example.js"></script>
 <script src="<cdn-domain>/js/subdirectory/example.js"></script>
 ```
-The js file is minified and compressed using terser minifier. The options for the minification can be changed inside `config.js`.
+The js file is minified and compressed using terser minifier. 
+> [!TIP]
+> The options for the minification can be changed inside `config.js`.
